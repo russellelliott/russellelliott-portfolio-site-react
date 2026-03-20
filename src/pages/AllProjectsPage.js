@@ -69,6 +69,7 @@ const AllProjectsPage = () => {
         {sortedProjects.map((project) => {
             const startDate = formatDate(project.dates.start);
             const endDate = project.dates.end ? formatDate(project.dates.end) : startDate;
+            const dateDisplay = startDate === endDate ? startDate : `${startDate} - ${endDate}`;
 
             return (
               <Grid item xs={12} md={4} key={project.slug}>
@@ -84,7 +85,7 @@ const AllProjectsPage = () => {
                         )}
                       </Box>
                       <Typography variant="caption" color="textSecondary" sx={{display: 'block', mb: 1.5}}>
-                        {startDate} - {endDate}
+                        {dateDisplay}
                       </Typography>
                     </Grid>
                     
@@ -110,12 +111,9 @@ const AllProjectsPage = () => {
                      <Grid item>
                         <Box sx={{ mb: 2 }}>
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5, mb: 1 }}>
-                                {project.techStack && project.techStack.slice(0, 3).map((tech) => (
+                                {project.techStack && project.techStack.map((tech) => (
                                     <Chip key={tech} label={tech} size="small" sx={{ fontSize: '0.7rem' }} />
                                 ))}
-                                {project.techStack && project.techStack.length > 3 && (
-                                    <Chip label={`+${project.techStack.length - 3}`} size="small" sx={{ fontSize: '0.7rem' }} />
-                                )}
                             </Box>
                         </Box>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { projects } from '../data/projects';
-import { Container, Typography, Box, Chip, Grid, Divider, Tabs, Tab, Button } from '@mui/material';
+import { Container, Typography, Box, Chip, Divider, Tabs, Tab, Button, MobileStepper, IconButton, Paper } from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import { SiDevpost, SiGoogleslides } from "react-icons/si";
 import { useNavigate } from 'react-router-dom';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import { useTheme } from '@mui/material/styles';
 
 // Utility function to format Date objects to Month YYYY
 const formatDate = (date) => {
@@ -20,10 +23,13 @@ const formatDate = (date) => {
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [activeStep, setActiveStep] = useState(0);
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
+    setActiveStep(0); // Reset stepper when tab changes
   };
 
   const categories = ['Current', 'Recent', 'Hackathon'];
@@ -34,6 +40,20 @@ const Home = () => {
         const dateB = b.dates.start instanceof Date ? b.dates.start : new Date(0);
         return dateB - dateA;
     });
+
+  const maxSteps = filteredProjects.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => 
+      prevActiveStep === maxSteps - 1 ? 0 : prevActiveStep + 1
+    );
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => 
+      prevActiveStep === 0 ? maxSteps - 1 : prevActiveStep - 1
+    );
+  };
 
   const renderLinkChip = (label, href, icon) => {
     if (!href) return null;
@@ -101,50 +121,74 @@ const Home = () => {
           </Tabs>
         </Box>
 
-        <Grid container spacing={3}>
-        {filteredProjects.map((project) => {
-            const startDate = formatDate(project.dates.start);
-            const endDate = project.dates.end ? formatDate(project.dates.end) : startDate;
+        {/* Projects Carousel */}
+        {maxSteps > 0 && (
+          <Box sx={{ flexGrow: 1, maxWidth: 800, mx: 'auto' }}>
+             <Paper
+                elevation={3}
+                sx={{
+                  bgcolor: 'background.default',
+                  width: '100%',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: 2
+                }}
+              >
+              <Box sx={{ display: 'grid' }}>
+              {filteredProjects.map((project, index) => {
+                const isActive = activeStep === index;
+                const startDate = formatDate(project.dates.start);
+                const endDate = project.dates.end ? formatDate(project.dates.end) : startDate;
+                const dateDisplay = startDate === endDate ? startDate : `${startDate} - ${endDate}`;
 
-            return (
-              <Grid item xs={12} md={4} key={project.slug}>
-                <Box sx={{ p: 2, border: '1px solid #ddd', borderRadius: '8px', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                  <Grid container spacing={2} direction="column" sx={{ height: '100%', flexWrap: 'nowrap' }}>
-                    <Grid item>
-                      <Typography variant="h5" component="div" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
-                        {project.name}
-                      </Typography>
-                      <Typography variant="caption" color="textSecondary" sx={{display: 'block', mb: 1.5}}>
-                        {startDate} - {endDate}
-                      </Typography>
-                    </Grid>
-                    
-                    <Grid item flexGrow={1}>
-                       <Box sx={{mb: 2}}>
-                         <Typography variant="body2" color="textSecondary">
+                return (
+                  <Box
+                    key={project.name}
+                    sx={{
+                        gridArea: '1 / 1',
+                        opacity: isActive ? 1 : 0,
+                        visibility: isActive ? 'visible' : 'hidden',
+                        width: '100%',
+                        p: 3,
+                        display: 'flex', 
+                        flexDirection: 'column',
+                        height: '100%',
+                        pointerEvents: isActive ? 'auto' : 'none',
+                        transition: 'opacity 0.3s ease-in-out'
+                    }}
+                    aria-hidden={!isActive}
+                  >
+                     <Box>
+                        <Typography variant="h5" component="div" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
+                            {project.name}
+                        </Typography>
+                        <Typography variant="caption" color="textSecondary" sx={{display: 'block', mb: 1.5}}>
+                            {dateDisplay}
+                        </Typography>
+                     </Box>
+
+                     <Box sx={{mb: 2, flexGrow: 1}}>
+                        <Typography variant="body1" color="textSecondary">
                             {project.description}
-                          </Typography>
-                       </Box>
-                    </Grid>
+                        </Typography>
+                     </Box>
 
-                    <Divider sx={{my: 1}} />
+                     <Box>
+                        <Divider sx={{my: 2}} />
 
-                    <Grid item>
-                      <Box sx={{ mb: 2 }}>
-                         <Typography variant="caption" color="textSecondary" sx={{fontWeight: 'bold', display: 'block', mb: 0.5}}>
-                            Tech Stack
-                          </Typography>
-                          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                            {project.techStack && project.techStack.map((tech, index) => (
-                              <Chip key={index} label={tech} size="small" sx={{ borderRadius: '16px' }} />
-                            ))}
-                          </Box>
-                      </Box>
-                    </Grid>
+                        <Box sx={{ mb: 2 }}>
+                            <Typography variant="caption" color="textSecondary" sx={{fontWeight: 'bold', display: 'block', mb: 0.5}}>
+                                Tech Stack
+                            </Typography>
+                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                {project.techStack && project.techStack.map((tech, index) => (
+                                <Chip key={index} label={tech} size="small" sx={{ borderRadius: '16px' }} />
+                                ))}
+                            </Box>
+                        </Box>
 
-                    <Divider sx={{my: 1}} />
+                        <Divider sx={{my: 2}} />
 
-                    <Grid item>
                         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                           {/* GitHub Links */}
                           {project.links.github && Object.entries(project.links.github).map(([label, url]) => 
@@ -157,13 +201,60 @@ const Home = () => {
                           {renderLinkChip('Devpost', project.links.devpost, <SiDevpost />)}
                           {renderLinkChip('Slides', project.links.slides, <SiGoogleslides />)}
                         </Box>
-                    </Grid>
-                  </Grid>
-                </Box>
-              </Grid>
-            );
-          })}
-        </Grid>
+                     </Box>
+                  </Box>
+                )
+              })}
+              </Box>
+             </Paper>
+             
+             {/* Navigation Stepper */}
+            <MobileStepper
+              steps={maxSteps}
+              position="static"
+              activeStep={activeStep}
+              sx={{ 
+                  bgcolor: 'transparent',
+                  mt: 1,
+                  '& .MuiMobileStepper-dot': {
+                      backgroundColor: 'rgba(0, 0, 0, 0.26)'
+                  },
+                  '& .MuiMobileStepper-dotActive': {
+                      backgroundColor: 'primary.main'
+                  } 
+               }}
+              nextButton={
+                <Button
+                  size="small"
+                  onClick={handleNext}
+                >
+                  Next
+                  {theme.direction === 'rtl' ? (
+                    <KeyboardArrowLeft />
+                  ) : (
+                    <KeyboardArrowRight />
+                  )}
+                </Button>
+              }
+              backButton={
+                <Button size="small" onClick={handleBack}>
+                  {theme.direction === 'rtl' ? (
+                    <KeyboardArrowRight />
+                  ) : (
+                    <KeyboardArrowLeft />
+                  )}
+                  Back
+                </Button>
+              }
+            />
+          </Box>
+        )}
+        
+        {maxSteps === 0 && (
+             <Typography variant="body1" align="center" sx={{ mt: 4, mb: 4, color: 'text.secondary' }}>
+                No projects found in this category.
+            </Typography>
+        )}
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 4 }}>
             <Button variant="outlined" size="large" onClick={() => navigate('/projects')}>
