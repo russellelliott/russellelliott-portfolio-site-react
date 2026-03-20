@@ -116,7 +116,7 @@ const Home = () => {
           <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
             <Box component="span" sx={{ fontWeight: 'bold' }}>Languages:</Box> TypeScript, JavaScript, Python, SQL, PHP, Swift<br />
             <Box component="span" sx={{ fontWeight: 'bold' }}>AI/ML Tools:</Box> TensorFlow, PyTorch, MLX, Hugging Face, LangChain, NumPy, Pandas<br />
-            <Box component="span" sx={{ fontWeight: 'bold' }}>LLMs I Use:</Box> Gemini, Perplexity, Claude<br />
+            <Box component="span" sx={{ fontWeight: 'bold' }}>LLMs I Use:</Box> Gemini, Perplexity, Claude, OpenAI<br />
             <Box component="span" sx={{ fontWeight: 'bold' }}>Web Development:</Box> React, Next.js, Redux, FastAPI, Flask, RESTful & GraphQL APIs, OpenAPI<br />
             <Box component="span" sx={{ fontWeight: 'bold' }}>Databases:</Box> PostgreSQL, MySQL, Firebase, MongoDB, LanceDB, Pinecone<br />
             <Box component="span" sx={{ fontWeight: 'bold' }}>DevOps & Environments:</Box> AWS (EC2/S3), GCP, Docker, GitHub, GitLab, WebSockets, Cypress, Jest
