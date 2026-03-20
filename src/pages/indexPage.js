@@ -135,8 +135,8 @@ const Home = () => {
                 }}
               >
               <Box sx={{ display: 'grid' }}>
-              {filteredProjects.map((project, index) => {
-                const isActive = activeStep === index;
+              {projects.filter((p) => categories.includes(p.category)).map((project) => {
+                const isActive = filteredProjects[activeStep] === project;
                 const startDate = formatDate(project.dates.start);
                 const endDate = project.dates.end ? formatDate(project.dates.end) : startDate;
                 const dateDisplay = startDate === endDate ? startDate : `${startDate} - ${endDate}`;
