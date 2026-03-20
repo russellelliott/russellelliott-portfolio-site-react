@@ -47,6 +47,27 @@ const Home = () => {
           <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', color: 'text.secondary' }}>
             Recent UCSC MS CS graduate seeking AI/ML engineering roles in the SF Bay Area. I focus on LLM systems, including pipelines, optimization, and edge deployment, with full-stack experience in React, TypeScript, and Python.
           </Typography>
+
+          <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 3 }}>
+            Currently:
+          </Typography>
+          <Box component="ul" sx={{ pl: 2, typography: 'body1', color: 'text.secondary' }}>
+            <li>Working on ... Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Building ... Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Learning ... Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
+          </Box>
+
+          <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 3, mb: 1 }}>
+            Skills
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>Languages:</Box> TypeScript, JavaScript, Python, SQL, PHP, Swift<br />
+            <Box component="span" sx={{ fontWeight: 'bold' }}>AI/ML Tools:</Box> TensorFlow, PyTorch, MLX, Hugging Face, LangChain, NumPy, Pandas<br />
+            <Box component="span" sx={{ fontWeight: 'bold' }}>LLMs I Use:</Box> Gemini, Perplexity, Claude<br />
+            <Box component="span" sx={{ fontWeight: 'bold' }}>Web Development:</Box> React, Next.js, Redux, FastAPI, Flask, RESTful & GraphQL APIs, OpenAPI<br />
+            <Box component="span" sx={{ fontWeight: 'bold' }}>Databases:</Box> PostgreSQL, MySQL, Firebase, MongoDB, LanceDB, Pinecone<br />
+            <Box component="span" sx={{ fontWeight: 'bold' }}>DevOps & Environments:</Box> AWS (EC2/S3), GCP, Docker, GitHub, GitLab, WebSockets, Cypress, Jest
+          </Typography>
         </Box>
 
         <Divider sx={{ mb: 6 }} />
