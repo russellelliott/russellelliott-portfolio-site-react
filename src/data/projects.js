@@ -3,7 +3,7 @@ export const projects = [
     name: "Apple MCP Notes",
     slug: "apple-mcp-notes",
     description: "Transforms your personal Apple Notes library into a fully searchable, AI-powered knowledge base. Rather than relying on simple keyword matching, the system builds a vector database of your notes using semantic embeddings, allowing you to surface relevant content based on meaning and context. On top of search, it applies BERTopic clustering to automatically identify recurring themes across hundreds of notes, making hidden patterns in your thinking visible. The visual frontend renders these clusters as interactive 2D/3D UMAP plots.",
-    techStack: ["TypeScript", "Python", "FastAPI", "BERTopic", "UMAP", "React", "Electron", "LanceDB", "sentence-transformers"],
+    techStack: ["TypeScript", "Python", "FastAPI", "React", "Electron", "LanceDB"],
     links: {
       github: { "Source Code": "https://github.com/russellelliott/mcp-apple-notes-2" }
     },
@@ -29,7 +29,7 @@ export const projects = [
     name: "Luma Events Aggregator",
     slug: "luma-event-aggregation",
     description: "Solves the problem of event discovery overload by automatically pulling events from Luma, classifying them using LLMs, and presenting them through a clean, filterable web interface. The full data pipeline from fetching and classification to database backup and API serving can be triggered with a single startup script, reducing friction for tech networking.",
-    techStack: ["Python", "FastAPI", "React", "Google Maps API", "SQLite", "LLM Classification"],
+    techStack: ["Python", "FastAPI", "React", "Google Maps API", "LanceDB", "Ollama"],
     links: {
       github: { "Source Code": "https://github.com/russellelliott/Luma-Event-Aggregation" }
     },
@@ -60,7 +60,7 @@ export const projects = [
       "Designed a deterministic restaurant status system using Google Places API to classify locations and detect acquisitions and permanent closures, removing LLM hallucinations.",
       "Implemented a hybrid API-grounded flow using Perplexity, Gemini, and Google Geocoding to fill gaps (websites, hours, names, coordinates) and return traceable, authoritative business data at scale."
     ],
-    techStack: ["Python", "Gemini AI", "Google Places API", "Perplexity API", "GeoJSON"],
+    techStack: ["Python", "Gemini AI", "Google Places API", "Perplexity API"],
     links: {
       github: {
         "Pipeline": "https://github.com/project-terraforma/openweb-places-engine",
@@ -81,7 +81,7 @@ export const projects = [
       "Evaluated 5 LLMs across 25+ threat categories, proving jailbreak prompts bypass safety filters (up to 92% success).",
       "Built async pipeline tracking rejection behaviors and cosine similarity of generated exploits."
     ],
-    techStack: ["Python", "LLM APIs", "Asyncio", "Matplotlib", "Sentence-Transformers"],
+    techStack: ["Python", "LLM APIs"],
     links: {
       github: {
         "Scripts": "https://github.com/russellelliott/CSE233-Project",
@@ -97,7 +97,7 @@ export const projects = [
     name: "TriCO: NYT Connections Generator (CMPM244)",
     slug: "cmpm244-project",
     description: "Implements and extends research on LLMs as puzzle generators for The New York Times' Connections game. Introduces a novel method called TriCO (Tri-view Counterfactual Optimization) which optimizes puzzles by combining semantic, phonetic, and orthographic word relationships.",
-    techStack: ["Python", "Flask", "React", "CMU Pronouncing Dictionary", "LLM Reasoning"],
+    techStack: ["Python", "Flask", "React", "LLM APIs"],
     links: {
       github: { "Source Code": "https://github.com/russellelliott/CMPM244-Project" }
     },
@@ -137,7 +137,7 @@ export const projects = [
     name: "CMPM290 Video Platform",
     slug: "video-platform",
     description: "A platform for video transcription and navigation. Integrated Google Gemini’s speech-to-text technology and implemented speaker diarization within the transcription pipeline.",
-    techStack: ["React", "FastAPI", "Google Gemini", "Vector Database"],
+    techStack: ["React", "FastAPI", "Google Gemini", "LanceDB"],
     links: {
       github: { "Source Code": "https://github.com/MistreanuIonutCosmin/video-platfrom" }
     },
