@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { FaGithub, FaLinkedin, FaYoutube, FaFile, FaExternalLinkAlt } from 'react-icons/fa';
-import { CiMail } from 'react-icons/ci';
+import { IoMailSharp } from "react-icons/io5";
 
 const drawerWidth = 300;
 
@@ -61,7 +61,7 @@ const Sidebar = (props) => {
           { text: 'Linkedin', icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/russell-elliott-2001/' },
           { text: 'Youtube', icon: <FaYoutube />, href: 'https://www.youtube.com/channel/UCY4L4GNljnzOG5a8Vvqiwqw' },
           { text: 'Resume', icon: <FaFile />, href: '/Russell_Elliott___Resume.pdf' },
-          { text: 'Contact Me', icon: <CiMail />, href: 'mailto:russell@quadsquad.net' },
+          { text: 'Contact Me', icon: <IoMailSharp />, href: 'mailto:russell@quadsquad.net' },
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton component="a" href={item.href} target="_blank" rel="noopener noreferrer">
