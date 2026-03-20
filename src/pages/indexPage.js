@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { projects } from '../data/projects';
-import { Container, Typography, Box, Chip, Grid, Divider } from '@mui/material';
+import { Container, Typography, Box, Chip, Grid, Divider, Tabs, Tab, Button } from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import { SiDevpost, SiGoogleslides } from "react-icons/si";
+import { useNavigate } from 'react-router-dom';
 
 // Utility function to format Date objects to Month YYYY
 const formatDate = (date) => {
+  if (date === 'Ongoing') return 'Ongoing';
   if (!(date instanceof Date) || isNaN(date.getTime())) {
     console.error('Invalid date object:', date);
     return ''; // or a fallback value
@@ -17,7 +19,22 @@ const formatDate = (date) => {
 };
 
 const Home = () => {
-  
+  const [activeTab, setActiveTab] = useState(0);
+  const navigate = useNavigate();
+
+  const handleTabChange = (event, newValue) => {
+    setActiveTab(newValue);
+  };
+
+  const categories = ['Current', 'Recent', 'Hackathon'];
+  const filteredProjects = projects
+    .filter((project) => project.category === categories[activeTab])
+    .sort((a, b) => {
+        const dateA = a.dates.start instanceof Date ? a.dates.start : new Date(0);
+        const dateB = b.dates.start instanceof Date ? b.dates.start : new Date(0);
+        return dateB - dateA;
+    });
+
   const renderLinkChip = (label, href, icon) => {
     if (!href) return null;
     return (
@@ -75,8 +92,17 @@ const Home = () => {
         <Typography variant="h3" gutterBottom>
           Projects
         </Typography>
+
+        <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>
+          <Tabs value={activeTab} onChange={handleTabChange} aria-label="project categories">
+            <Tab label="Current" />
+            <Tab label="Recent" />
+            <Tab label="Hackathon" />
+          </Tabs>
+        </Box>
+
         <Grid container spacing={3}>
-        {projects.map((project) => {
+        {filteredProjects.map((project) => {
             const startDate = formatDate(project.dates.start);
             const endDate = project.dates.end ? formatDate(project.dates.end) : startDate;
 
@@ -109,7 +135,7 @@ const Home = () => {
                             Tech Stack
                           </Typography>
                           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                            {project.techStack.map((tech, index) => (
+                            {project.techStack && project.techStack.map((tech, index) => (
                               <Chip key={index} label={tech} size="small" sx={{ borderRadius: '16px' }} />
                             ))}
                           </Box>
@@ -138,6 +164,12 @@ const Home = () => {
             );
           })}
         </Grid>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 4 }}>
+            <Button variant="outlined" size="large" onClick={() => navigate('/projects')}>
+                Show All Projects
+            </Button>
+        </Box>
       </Container>
     </Sidebar>
   );

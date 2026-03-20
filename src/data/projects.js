@@ -2,6 +2,7 @@ export const projects = [
   {
     name: "Apple MCP Notes",
     slug: "apple-mcp-notes",
+    category: "Current",
     description: "Transforms your personal Apple Notes library into a fully searchable, AI-powered knowledge base. Rather than relying on simple keyword matching, the system builds a vector database of your notes using semantic embeddings, allowing you to surface relevant content based on meaning and context. On top of search, it applies BERTopic clustering to automatically identify recurring themes across hundreds of notes, making hidden patterns in your thinking visible. The visual frontend renders these clusters as interactive 2D/3D UMAP plots.",
     techStack: ["TypeScript", "Python", "FastAPI", "React", "Electron", "LanceDB"],
     links: {
@@ -15,6 +16,7 @@ export const projects = [
   {
     name: "Elliott Home Organizer",
     slug: "elliott-home-organization",
+    category: "Current",
     description: "A smart household cataloging system that brings AI vision to the task of organizing physical media. You simply photograph your bookshelves, and the app uses Google Gemini's vision capabilities to identify every book's title and author from the image. It enriches each entry by pulling in ISBNs, publishers, and publication years via Perplexity API, turning manual inventory work into a structured database.",
     techStack: ["Next.js", "Google Gemini API", "Perplexity API", "Firebase"],
     links: {
@@ -28,6 +30,7 @@ export const projects = [
   {
     name: "Luma Events Aggregator",
     slug: "luma-event-aggregation",
+    category: "Current",
     description: "Solves the problem of event discovery overload by automatically pulling events from Luma, classifying them using LLMs, and presenting them through a clean, filterable web interface. The full data pipeline from fetching and classification to database backup and API serving can be triggered with a single startup script, reducing friction for tech networking.",
     techStack: ["Python", "FastAPI", "React", "Google Maps API", "LanceDB", "Ollama"],
     links: {
@@ -41,6 +44,7 @@ export const projects = [
   {
     name: "Job Organizer App",
     slug: "job-application-tracker",
+    category: "Current",
     description: "A fully-featured desktop application built to bring order to the chaos of a high-volume job search. It tracks every application through a detailed timeline, highlights stagnant applications, and visualizes the application funnel as a Sankey diagram. Built as a native desktop app, all data stays local and private.",
     techStack: ["Electron", "React", "TypeScript", "PouchDB", "Recharts", "Material UI"],
     links: {
@@ -54,6 +58,7 @@ export const projects = [
   {
     name: "Open Web Places Data Extraction & Validation",
     slug: "crwn102-places-engine",
+    category: "Recent",
     description: "An AI-powered validation pipeline developed to improve the quality and accuracy of open web places data, focusing on restaurant POI across the US and Canada. Features a modular architecture for data standardization, location validation, and enrichment.",
     highlights: [
       "Built a 3-stage validation pipeline to clean and standardize restaurant POI data from Yelp and AllThePlaces for Overture Maps, processing 246 GeoJSON files and 323+ chains.",
@@ -76,6 +81,7 @@ export const projects = [
   {
     name: "LLM Security Benchmarking (CSE233)",
     slug: "cse233-project",
+    category: "Recent",
     description: "Systematically evaluates the behavior and security robustness of various LLMs (GPT-4o, Claude, Gemini, DeepSeek, Llama3) when prompted with code-related tasks and 'jailbreak' contexts from the RedCode dataset.",
     highlights: [
       "Evaluated 5 LLMs across 25+ threat categories, proving jailbreak prompts bypass safety filters (up to 92% success).",
@@ -96,6 +102,7 @@ export const projects = [
   {
     name: "TriCO: NYT Connections Generator (CMPM244)",
     slug: "cmpm244-project",
+    category: "Recent",
     description: "Implements and extends research on LLMs as puzzle generators for The New York Times' Connections game. Introduces a novel method called TriCO (Tri-view Counterfactual Optimization) which optimizes puzzles by combining semantic, phonetic, and orthographic word relationships.",
     techStack: ["Python", "Flask", "React", "LLM APIs"],
     links: {
@@ -136,6 +143,7 @@ export const projects = [
   {
     name: "CMPM290 Video Platform",
     slug: "video-platform",
+    category: "Recent",
     description: "A platform for video transcription and navigation. Integrated Google Gemini’s speech-to-text technology and implemented speaker diarization within the transcription pipeline.",
     techStack: ["React", "FastAPI", "Google Gemini", "LanceDB"],
     links: {
@@ -223,6 +231,7 @@ export const projects = [
   {
     name: "SlugSwap",
     slug: "slugswap",
+    category: "Hackathon",
     description: "A messaging app for exchanging UCSC’s meal currency, SlugPoints. Features Google/Apple authentication and real-time messaging. Won Best UI/UX at CruzHacks 2023.",
     techStack: ["React Native", "Firebase"],
     links: {
@@ -303,6 +312,7 @@ export const projects = [
   {
     name: "PayPal Hackathon",
     slug: "paypal-hackathon",
+    category: "Hackathon",
     description: "A storefront utilizing PayPal Fastlane for quick and easy checkout without requiring user accounts.",
     techStack: ["JavaScript", "OpenAPI", "Docker", "PostgreSQL"],
     links: {
