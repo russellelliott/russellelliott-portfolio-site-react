@@ -105,9 +105,9 @@ const Home = () => {
             Currently:
           </Typography>
           <Box component="ul" sx={{ pl: 2, typography: 'body1', color: 'text.secondary' }}>
-            <li>Working on ... Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Building ... Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-            <li>Learning ... Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</li>
+            <li>Building full-stack AI applications with a focus on LLM integration and optimization.</li>
+            <li>Attending AI/tech networking events and meetups in the SF Bay Area.</li>
+            <li>Actively seeking engineering roles in the SF Bay Area.</li>
           </Box>
 
           <Typography variant="h6" sx={{ fontWeight: 'bold', mt: 3, mb: 1 }}>
