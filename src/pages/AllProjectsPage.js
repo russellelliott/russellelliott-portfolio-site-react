@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { projects } from '../data/projects';
-import { Container, Typography, Box, Grid, Link, Button, Chip, Divider } from '@mui/material';
+import { Container, Typography, Box, Grid, Button, Chip, Divider } from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";

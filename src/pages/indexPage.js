@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { projects } from '../data/projects';
-import { Container, Typography, Box, Chip, Divider, Tabs, Tab, Button, MobileStepper, IconButton, Paper } from '@mui/material';
+import { Container, Typography, Box, Chip, Divider, Tabs, Tab, Button, MobileStepper, Paper } from '@mui/material';
 import Sidebar from '../components/Sidebar';
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
