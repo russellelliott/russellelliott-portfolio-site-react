@@ -1,7 +1,10 @@
 import React from 'react';
 import { projects } from '../data/projects';
-import { Container, List, ListItem, Typography, Box, Chip, Grid } from '@mui/material';
+import { Container, Typography, Box, Chip, Grid, Divider } from '@mui/material';
 import Navbar from '../components/Navbar'; // Ensure correct casing for component imports
+import { FaGithub, FaYoutube } from "react-icons/fa";
+import { CiGlobe } from "react-icons/ci";
+import { SiDevpost, SiGoogleslides } from "react-icons/si";
 
 // Utility function to format Date objects to Month YYYY
 const formatDate = (date) => {
@@ -14,48 +17,96 @@ const formatDate = (date) => {
 };
 
 const Home = () => {
+  
+  const renderLinkChip = (label, href, icon) => {
+    if (!href) return null;
+    return (
+      <Chip
+        key={label}
+        label={label}
+        icon={icon}
+        component="a"
+        href={href}
+        target="_blank"
+        rel="noopener"
+        clickable
+        size="small"
+        variant="outlined"
+        sx={{ borderRadius: '16px' }}
+      />
+    );
+  };
+
   return (
     <div>
       <Navbar />
-      <Container>
-        <Typography variant="h1" gutterBottom>
+      <Container maxWidth="xl">
+        <Typography variant="h3" gutterBottom>
           Projects
         </Typography>
-        <List>
-          {projects.map((project) => {
+        <Grid container spacing={3}>
+        {projects.map((project) => {
             const startDate = formatDate(project.dates.start);
             const endDate = project.dates.end ? formatDate(project.dates.end) : startDate;
 
             return (
-              <ListItem key={project.slug} sx={{ mb: 4, p: 2, border: '1px solid #ddd', borderRadius: '8px' }}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12}>
-                    <a href={`/projects/${project.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                      <Typography variant="h2" component="span" sx={{ color: 'primary.main' }}>
+              <Grid item xs={12} md={4} key={project.slug}>
+                <Box sx={{ p: 2, border: '1px solid #ddd', borderRadius: '8px', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <Grid container spacing={2} direction="column" sx={{ height: '100%', flexWrap: 'nowrap' }}>
+                    <Grid item>
+                      <Typography variant="h5" component="div" sx={{ color: 'primary.main', fontWeight: 'bold' }}>
                         {project.name}
                       </Typography>
-                    </a>
+                      <Typography variant="caption" color="textSecondary" sx={{display: 'block', mb: 1.5}}>
+                        {startDate} - {endDate}
+                      </Typography>
+                    </Grid>
+                    
+                    <Grid item flexGrow={1}>
+                       <Box sx={{mb: 2}}>
+                         <Typography variant="body2" color="textSecondary">
+                            {project.description}
+                          </Typography>
+                       </Box>
+                    </Grid>
+
+                    <Divider sx={{my: 1}} />
+
+                    <Grid item>
+                      <Box sx={{ mb: 2 }}>
+                         <Typography variant="caption" color="textSecondary" sx={{fontWeight: 'bold', display: 'block', mb: 0.5}}>
+                            Tech Stack
+                          </Typography>
+                          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                            {project.techStack.map((tech, index) => (
+                              <Chip key={index} label={tech} size="small" sx={{ borderRadius: '16px' }} />
+                            ))}
+                          </Box>
+                      </Box>
+                    </Grid>
+
+                    <Divider sx={{my: 1}} />
+
+                    <Grid item>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                          {/* GitHub Links */}
+                          {project.links.github && Object.entries(project.links.github).map(([label, url]) => 
+                            renderLinkChip(label, url, <FaGithub />)
+                          )}
+                          
+                          {/* Other Links */}
+                          {renderLinkChip('Live Site', project.links.live, <CiGlobe />)}
+                          {renderLinkChip('Video', project.links.video, <FaYoutube />)}
+                          {renderLinkChip('Devpost', project.links.devpost, <SiDevpost />)}
+                          {renderLinkChip('Slides', project.links.slides, <SiGoogleslides />)}
+                        </Box>
+                    </Grid>
                   </Grid>
-                  <Grid item xs={12}>
-                    <Typography variant="body1" color="textSecondary">
-                      <strong>Dates:</strong> {startDate} - {endDate}
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Typography variant="body2" color="textSecondary">
-                      <strong>Tech Stack:</strong>
-                    </Typography>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 1 }}>
-                      {project.techStack.map((tech, index) => (
-                        <Chip key={index} label={tech} sx={{ borderRadius: '16px' }} />
-                      ))}
-                    </Box>
-                  </Grid>
-                </Grid>
-              </ListItem>
+                </Box>
+              </Grid>
             );
           })}
-        </List>
+        </Grid>
       </Container>
     </div>
   );

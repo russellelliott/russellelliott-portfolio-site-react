@@ -34,19 +34,19 @@ const ProjectPage = () => {
     <div>
       <Navbar />
       <Container>
-        <Typography variant="h1" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           {project.name}
         </Typography>
-        <Typography variant="body1" paragraph>
+        <Typography variant="body2" paragraph>
           {project.description}
         </Typography>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="subtitle1" gutterBottom sx={{ fontWeight: 'bold' }}>
           Dates
         </Typography>
-        <Typography variant="body1" paragraph>
-          <strong>{startDate} - {endDate}</strong>
+        <Typography variant="body2" paragraph>
+          {startDate} - {endDate}
         </Typography>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="subtitle1" gutterBottom sx={{ fontWeight: 'bold' }}>
           Tech Stack
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 2 }}>
@@ -58,7 +58,7 @@ const ProjectPage = () => {
             />
           ))}
         </Box>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="subtitle1" gutterBottom sx={{ fontWeight: 'bold' }}>
           Links
         </Typography>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
