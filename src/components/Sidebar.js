@@ -38,24 +38,21 @@ const Sidebar = (props) => {
           src="/profile.jpg"
           sx={{ width: 100, height: 100, mb: 1 }}
         />
-        <Typography variant="h6" align="center" sx={{ fontWeight: 'bold' }}>
+        <Typography variant="h6" align="center" sx={{ fontWeight: 'bold', color: 'white' }}>
           Russell Elliott
         </Typography>
-        <Typography variant="subtitle2" align="center" color="text.secondary" gutterBottom>
+        <Typography variant="subtitle2" align="center" sx={{ color: 'grey.300' }} gutterBottom>
           Full Stack/Edge AI/LLM Engineer
         </Typography>
-        <Typography variant="body2" align="center" sx={{ mt: 1, mb: 1 }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        </Typography>
-        <Typography variant="caption" align="center" color="text.secondary">
+        <Typography variant="caption" align="center" sx={{ mt: 1, color: 'grey.400' }}>
           Santa Cruz, CA
         </Typography>
-        <Typography variant="caption" align="center" color="text.secondary">
+        <Typography variant="caption" align="center" sx={{ color: 'grey.400' }}>
           Open to roles in SF Bay Area
         </Typography>
       </Box>
 
-      <Divider />
+      <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
 
       {/* Navigation Links */}
       <List>
@@ -68,32 +65,18 @@ const Sidebar = (props) => {
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton component="a" href={item.href} target="_blank" rel="noopener noreferrer">
-              <ListItemIcon sx={{ minWidth: 40, fontSize: 20 }}>
+              <ListItemIcon sx={{ minWidth: 40, fontSize: 20, color: 'grey.300' }}>
                 {item.icon}
               </ListItemIcon>
-              <ListItemText primary={item.text} />
+              <ListItemText primary={item.text} sx={{ color: 'white', '& .MuiTypography-root': { fontWeight: 500 } }} />
               <FaExternalLinkAlt size={12} color="gray" />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
 
-      <Divider />
+      <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.12)' }} />
 
-      {/* What I Do Section */}
-      <Box sx={{ mt: 2 }}>
-        <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1 }}>
-          What I do
-        </Typography>
-        <Typography variant="body2" paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </Typography>
-        <Typography variant="body2" component="ul" sx={{ pl: 2 }}>
-          <li>
-            Seeking software engineering roles in the San Francisco Bay Area.
-          </li>
-        </Typography>
-      </Box>
     </Box>
   );
 
@@ -145,7 +128,7 @@ const Sidebar = (props) => {
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, bgcolor: '#0A1929', color: 'white' },
           }}
         >
           {drawerContent}
@@ -156,7 +139,7 @@ const Sidebar = (props) => {
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, bgcolor: '#0A1929', color: 'white' },
           }}
           open
         >

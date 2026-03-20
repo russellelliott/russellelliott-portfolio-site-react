@@ -40,6 +40,24 @@ const Home = () => {
   return (
     <Sidebar>
       <Container maxWidth="xl">
+        <Box sx={{ mb: 6, mt: 4 }}>
+          <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
+            What I do
+          </Typography>
+          <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', color: 'text.secondary' }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </Typography>
+          <Box component="ul" sx={{ pl: 2 }}>
+             <li>
+               <Typography variant="body1" sx={{ fontSize: '1.1rem', color: 'text.secondary' }}>
+                 Seeking software engineering roles in the San Francisco Bay Area.
+               </Typography>
+             </li>
+          </Box>
+        </Box>
+
+        <Divider sx={{ mb: 6 }} />
+
         <Typography variant="h3" gutterBottom>
           Projects
         </Typography>
