@@ -41,19 +41,12 @@ const Home = () => {
     <Sidebar>
       <Container maxWidth="xl">
         <Box sx={{ mb: 6, mt: 4 }}>
-          <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
-            What I do
+          <Typography variant="h4" gutterBottom>
+            Hi, I'm <Box component="span" sx={{ fontWeight: 'bold' }}>Russell!</Box>
           </Typography>
           <Typography variant="body1" paragraph sx={{ fontSize: '1.1rem', color: 'text.secondary' }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Recent UCSC MS CS graduate seeking AI/ML engineering roles in the SF Bay Area. I focus on LLM systems, including pipelines, optimization, and edge deployment, with full-stack experience in React, TypeScript, and Python.
           </Typography>
-          <Box component="ul" sx={{ pl: 2 }}>
-             <li>
-               <Typography variant="body1" sx={{ fontSize: '1.1rem', color: 'text.secondary' }}>
-                 Seeking software engineering roles in the San Francisco Bay Area.
-               </Typography>
-             </li>
-          </Box>
         </Box>
 
         <Divider sx={{ mb: 6 }} />
