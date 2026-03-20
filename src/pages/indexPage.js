@@ -33,9 +33,25 @@ const Home = () => {
   };
 
   const categories = ['Current', 'Recent', 'Hackathon'];
+  const currentOrder = [
+    'apple-mcp-notes',
+    'job-application-tracker',
+    'luma-event-aggregation',
+    'elliott-home-organization'
+  ];
+
   const filteredProjects = projects
     .filter((project) => project.category === categories[activeTab])
     .sort((a, b) => {
+        if (categories[activeTab] === 'Current') {
+            const indexA = currentOrder.indexOf(a.slug);
+            const indexB = currentOrder.indexOf(b.slug);
+            
+            if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+            if (indexA !== -1) return -1;
+            if (indexB !== -1) return 1;
+        }
+
         const dateA = a.dates.start instanceof Date ? a.dates.start : new Date(0);
         const dateB = b.dates.start instanceof Date ? b.dates.start : new Date(0);
         return dateB - dateA;
