@@ -1,7 +1,7 @@
 import React from 'react';
 import { projects } from '../data/projects';
 import { Container, Typography, Box, Chip, Grid, Divider } from '@mui/material';
-import Navbar from '../components/Navbar'; // Ensure correct casing for component imports
+import Sidebar from '../components/Sidebar';
 import { FaGithub, FaYoutube } from "react-icons/fa";
 import { CiGlobe } from "react-icons/ci";
 import { SiDevpost, SiGoogleslides } from "react-icons/si";
@@ -38,8 +38,7 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <Navbar />
+    <Sidebar>
       <Container maxWidth="xl">
         <Typography variant="h3" gutterBottom>
           Projects
@@ -108,7 +107,7 @@ const Home = () => {
           })}
         </Grid>
       </Container>
-    </div>
+    </Sidebar>
   );
 };
 
