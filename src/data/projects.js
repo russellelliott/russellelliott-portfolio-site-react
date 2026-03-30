@@ -109,8 +109,8 @@ export const projects = [
       github: { "Source Code": "https://github.com/russellelliott/CMPM244-Project" }
     },
     dates: {
-      start: new Date("2025-04"),
-      end: new Date("2025-06")
+      start: new Date("2025-09"),
+      end: new Date("2025-12")
     }
   },
   {
