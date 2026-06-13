@@ -8,10 +8,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/mcp-apple-notes-2" }
     },
-    dates: {
-      start: new Date("2025-07"),
-      end: "Ongoing"
-    }
+     dates: {
+       start: new Date("2025-07-01"),
+       end: "Ongoing"
+      }
   },
   {
     name: "Elliott Home Organizer",
@@ -22,10 +22,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/Elliott-Home-Organization" }
     },
-    dates: {
-      start: new Date("2026-01"),
-      end: "Ongoing"
-    }
+     dates: {
+       start: new Date("2026-01-01"),
+       end: "Ongoing"
+      }
   },
   {
     name: "Luma Events Aggregator",
@@ -36,10 +36,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/Luma-Event-Aggregation" }
     },
-    dates: {
-      start: new Date("2025-10"),
-      end: "Ongoing"
-    }
+     dates: {
+       start: new Date("2025-10-01"),
+       end: "Ongoing"
+      }
   },
   {
     name: "Job Organizer App",
@@ -50,10 +50,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/Job-Application-Tracker" }
     },
-    dates: {
-      start: new Date("2026-02"),
-      end: "Ongoing"
-    }
+     dates: {
+       start: new Date("2026-02-01"),
+       end: "Ongoing"
+      }
   },
   {
     name: "Open Web Places Data Extraction & Validation",
@@ -73,10 +73,10 @@ export const projects = [
       },
       slides: "https://docs.google.com/presentation/d/18dB3RolsSjz0vFho0Ej7Q1W8CgxRVQCW40ov89NH5LI/edit?usp=sharing"
     },
-    dates: {
-      start: new Date("2025-09"),
-      end: new Date("2025-12")
-    }
+     dates: {
+       start: new Date("2025-09-01"),
+       end: new Date("2025-12-01")
+      }
   },
   {
     name: "LLM Security Benchmarking (CSE233)",
@@ -94,10 +94,10 @@ export const projects = [
         "Graphs": "https://github.com/russellelliott/CSE233-Project-LLM-Cherrypicking"
       }
     },
-    dates: {
-      start: new Date("2025-01"),
-      end: new Date("2025-03")
-    }
+     dates: {
+       start: new Date("2025-01-01"),
+       end: new Date("2025-03-01")
+      }
   },
   {
     name: "TriCO: NYT Connections Generator (CMPM244)",
@@ -108,10 +108,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/CMPM244-Project" }
     },
-    dates: {
-      start: new Date("2025-09"),
-      end: new Date("2025-12")
-    }
+     dates: {
+       start: new Date("2025-09-01"),
+       end: new Date("2025-12-01")
+      }
   },
   {
     name: "T2C: Parsons Problem Generator",
@@ -122,10 +122,10 @@ export const projects = [
       github: { "Source Code": "https://github.com/russellelliott/T2c" },
       live: "https://parsons-problem-generator.vercel.app/"
     },
-    dates: {
-      start: new Date("2025-05"),
-      end: new Date("2025-05")
-    }
+     dates: {
+       start: new Date("2025-05-01"),
+       end: new Date("2025-05-01")
+      }
   },
   {
     name: "T2A: Parsons Problem Hints",
@@ -135,10 +135,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/Parsons-Problems" }
     },
-    dates: {
-      start: new Date("2025-04"),
-      end: new Date("2025-04")
-    }
+     dates: {
+       start: new Date("2025-04-01"),
+       end: new Date("2025-04-01")
+      }
   },
   {
     name: "CMPM290 Video Platform",
@@ -149,10 +149,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/MistreanuIonutCosmin/video-platfrom" }
     },
-    dates: {
-      start: new Date("2025-06"),
-      end: new Date("2025-06")
-    }
+     dates: {
+       start: new Date("2025-06-01"),
+       end: new Date("2025-06-01")
+      }
   },
   {
     name: "Yumbai (CSE187 Capstone Project)",
@@ -168,10 +168,10 @@ export const projects = [
       github: { "Source Code": "https://github.com/CSE187-Team2" },
       video: "https://youtu.be/xXD64lfvpT4"
     },
-    dates: {
-      start: new Date("2023-01"),
-      end: new Date("2023-03")
-    }
+     dates: {
+       start: new Date("2023-01-01"),
+       end: new Date("2023-03-01")
+      }
   },
   {
     name: "CruzHacks 2024 Website",
@@ -184,10 +184,10 @@ export const projects = [
         "Backend": "https://github.com/CruzHacks/cruzhacks-2024-backend"
       }
     },
-    dates: {
-      start: new Date("2023-09"),
-      end: new Date("2024-01")
-    }
+     dates: {
+       start: new Date("2023-09-01"),
+       end: new Date("2024-01-01")
+      }
   },
   {
     name: "CruzHacks Backend Challenge",
@@ -197,10 +197,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/CruzHacks2024-Backend-Challenge" }
     },
-    dates: {
-      start: new Date("2023-05"),
-      end: new Date("2023-05")
-    }
+     dates: {
+       start: new Date("2023-05-01"),
+       end: new Date("2023-05-01")
+      }
   },
   {
     name: "CruzHacks Frontend Challenge",
@@ -210,10 +210,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/CruzHacks2024-Frontend-Challenge" }
     },
-    dates: {
-      start: new Date("2023-05"),
-      end: new Date("2023-05")
-    }
+     dates: {
+       start: new Date("2023-05-01"),
+       end: new Date("2023-05-01")
+      }
   },
   {
     name: "Club Organizer App",
@@ -223,10 +223,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/CSE115A-Club-Organizer-App/Club-Organizer-App" }
     },
-    dates: {
-      start: new Date("2023-09"),
-      end: new Date("2023-12")
-    }
+     dates: {
+       start: new Date("2023-09-01"),
+       end: new Date("2023-12-01")
+      }
   },
   {
     name: "SlugSwap",
@@ -239,10 +239,10 @@ export const projects = [
       devpost: "https://devpost.com/software/slug-swap-g1uz0s",
       video: "https://youtu.be/repxf9i9c2g?si=Xc_5Ke7NoyfyRg3Z"
     },
-    dates: {
-      start: new Date("2023-01"),
-      end: new Date("2023-01")
-    }
+     dates: {
+       start: new Date("2023-01-01"),
+       end: new Date("2023-01-01")
+      }
   },
   {
     name: "CodePath Flashcard App",
@@ -252,10 +252,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/CodePath-Flashcards" }
     },
-    dates: {
-      start: new Date("2022-02"),
-      end: new Date("2022-04")
-    }
+     dates: {
+       start: new Date("2022-02-01"),
+       end: new Date("2022-04-01")
+      }
   },
   {
     name: "PerfectlySnug Smart Topper App",
@@ -265,10 +265,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/PerfectlySnug-DemoApp" }
     },
-    dates: {
-      start: new Date("2022-06"),
-      end: new Date("2022-09")
-    }
+     dates: {
+       start: new Date("2022-06-01"),
+       end: new Date("2022-09-01")
+      }
   },
   {
     name: "Microgrid Manager",
@@ -278,10 +278,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/daxidngyn/microgrid-manager-v2" }
     },
-    dates: {
-      start: new Date("2024-01"),
-      end: new Date("2024-06")
-    }
+     dates: {
+       start: new Date("2024-01-01"),
+       end: new Date("2024-06-01")
+      }
   },
   {
     name: "SierraHiking.net",
@@ -291,10 +291,10 @@ export const projects = [
     links: {
       live: "https://sierrahiking.net/"
     },
-    dates: {
-      start: new Date("2022-07"),
-      end: new Date("2023-01")
-    }
+     dates: {
+       start: new Date("2022-07-01"),
+       end: new Date("2023-01-01")
+      }
   },
   {
     name: "Pack List Wizard",
@@ -304,10 +304,10 @@ export const projects = [
     links: {
       live: "https://www.sierrahiking.net/pack-list-wizard/"
     },
-    dates: {
-      start: new Date("2023-06"),
-      end: new Date("2024-01")
-    }
+     dates: {
+       start: new Date("2023-06-01"),
+       end: new Date("2024-01-01")
+      }
   },
   {
     name: "PayPal Hackathon",
@@ -318,10 +318,10 @@ export const projects = [
     links: {
       github: { "Source Code": "https://github.com/russellelliott/PayPal-Hackathon" }
     },
-    dates: {
-      start: new Date("2022-08"),
-      end: new Date("2022-08")
-    }
+     dates: {
+       start: new Date("2022-08-01"),
+       end: new Date("2022-08-01")
+      }
   },
   {
     name: "Esri Demo App",
@@ -332,10 +332,10 @@ export const projects = [
       github: { "Source Code": "https://github.com/russellelliott/Esri-Demo-App" },
       live: "https://esri-demo-app.netlify.app/"
     },
-    dates: {
-      start: new Date("2024-06"),
-      end: new Date("2024-06")
-    }
+     dates: {
+       start: new Date("2024-06-01"),
+       end: new Date("2024-06-01")
+      }
   },
   {
     name: "Old Personal Website",
@@ -346,9 +346,9 @@ export const projects = [
       github: { "Source Code": "https://github.com/russellelliott/russellelliott.github.io" },
       live: "https://russellelliott.github.io/"
     },
-    dates: {
-      start: new Date("2021-01"),
-      end: new Date("2022-01")
-    }
+     dates: {
+       start: new Date("2021-01-01"),
+       end: new Date("2022-01-01")
+      }
   }
 ];

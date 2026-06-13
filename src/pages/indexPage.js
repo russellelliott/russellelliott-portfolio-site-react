@@ -10,15 +10,26 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import { useTheme } from '@mui/material/styles';
 
+// Array of month names to avoid locale/timezone issues with Date methods
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
 // Utility function to format Date objects to Month YYYY
+// Uses UTC date components to avoid timezone conversion issues
 const formatDate = (date) => {
   if (date === 'Ongoing') return 'Ongoing';
   if (!(date instanceof Date) || isNaN(date.getTime())) {
     console.error('Invalid date object:', date);
-    return ''; // or a fallback value
+    return '';
   }
 
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+    // Use UTC month index (0-11) with predefined month names array
+  const month = MONTH_NAMES[date.getUTCMonth()];
+  const year = date.getUTCFullYear();
+  
+  return `${month} ${year}`;
 };
 
 const Home = () => {

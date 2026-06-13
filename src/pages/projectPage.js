@@ -5,9 +5,24 @@ import { projects } from '../data/projects';
 import Navbar from '../components/Navbar';
 import { Container, Typography, Box, Chip } from '@mui/material';
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+// Array of month names to avoid locale/timezone issues with Date methods
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+// Uses UTC date components to avoid timezone conversion issues
+const formatDate = (date) => {
+  if (date === "Ongoing") return "Ongoing";
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
+    console.error('Invalid date object:', date);
+    return '';
+  }
+
+  const month = MONTH_NAMES[date.getUTCMonth()];
+  const year = date.getUTCFullYear();
+  
+  return `${month} ${year}`;
 };
 
 const ProjectPage = () => {
