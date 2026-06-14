@@ -38,7 +38,7 @@ export const projects = [
     },
      dates: {
        start: new Date("2025-10-01"),
-       end: "Ongoing"
+       end: new Date("2026-04-01"),
       }
   },
   {
@@ -52,7 +52,7 @@ export const projects = [
     },
      dates: {
        start: new Date("2026-02-01"),
-       end: "Ongoing"
+       end: new Date("2026-04-01"),
       }
   },
   {
