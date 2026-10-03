@@ -13,20 +13,20 @@ export const projects = [
        end: "Ongoing"
       }
   },
-  {
-    name: "Elliott Home Organizer",
-    slug: "elliott-home-organization",
-    category: "Current",
-    description: "A smart household cataloging system that brings AI vision to the task of organizing physical media. You simply photograph your bookshelves, and the app uses Google Gemini's vision capabilities to identify every book's title and author from the image. It enriches each entry by pulling in ISBNs, publishers, and publication years via Perplexity API, turning manual inventory work into a structured database.",
-    techStack: ["Next.js", "Google Gemini API", "Perplexity API", "Firebase"],
-    links: {
-      github: { "Source Code": "https://github.com/russellelliott/Elliott-Home-Organization" }
-    },
-     dates: {
-       start: new Date("2026-01-01"),
-       end: "Ongoing"
-      }
-  },
+  // {
+  //   name: "Elliott Home Organizer",
+  //   slug: "elliott-home-organization",
+  //   category: "Current",
+  //   description: "A smart household cataloging system that brings AI vision to the task of organizing physical media. You simply photograph your bookshelves, and the app uses Google Gemini's vision capabilities to identify every book's title and author from the image. It enriches each entry by pulling in ISBNs, publishers, and publication years via Perplexity API, turning manual inventory work into a structured database.",
+  //   techStack: ["Next.js", "Google Gemini API", "Perplexity API", "Firebase"],
+  //   links: {
+  //     github: { "Source Code": "https://github.com/russellelliott/Elliott-Home-Organization" }
+  //   },
+  //    dates: {
+  //      start: new Date("2026-01-01"),
+  //      end: "Ongoing"
+  //     }
+  // },
   {
     name: "Luma Events Aggregator",
     slug: "luma-event-aggregation",
@@ -38,7 +38,7 @@ export const projects = [
     },
      dates: {
        start: new Date("2025-10-01"),
-       end: new Date("2026-04-01"),
+       end: "Ongoing"
       }
   },
   {
@@ -52,7 +52,7 @@ export const projects = [
     },
      dates: {
        start: new Date("2026-02-01"),
-       end: new Date("2026-04-01"),
+       end: "Ongoing"
       }
   },
   {
